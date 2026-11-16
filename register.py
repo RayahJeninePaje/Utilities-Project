@@ -12,9 +12,10 @@ BORDER = "#E2E8F0"
 
 
 class RegisterApp:
-    def __init__(self, root):
+    def __init__(self, root, app=None):
         self.root = root
-        self.root.title("DataGen | Create Account")
+        self.app = app
+        self.root.title("SIA Utilities | Create Account")
         self.root.geometry("900x560")
         self.root.resizable(False, False)
         self.root.configure(bg=BACKGROUND)
@@ -45,7 +46,7 @@ class RegisterApp:
 
         tk.Label(
             left,
-            text="Start generating realistic\nsample data with ease.",
+            text="Access useful tools from\none simple workspace.",
             font=("Arial", 12),
             bg=BLUE,
             fg="#DBEAFE",
@@ -175,6 +176,10 @@ class RegisterApp:
         )
 
     def back_to_login(self):
+        if self.app is not None:
+            self.app.show_login()
+            return
+
         messagebox.showinfo(
             "Login",
             "You can return to the login screen."

@@ -4,12 +4,13 @@ from login import LoginApp
 from register import RegisterApp
 from dashboard import DashboardApp
 from generate import GenerateApp
+from utilities import UtilityScreen
 
 
 class DataGenApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("DataGen")
+        self.root.title("SIA Utilities")
         self.root.geometry("1100x700")
         self.root.configure(bg="#F8FAFC")
 
@@ -34,6 +35,14 @@ class DataGenApp:
     def show_generate(self):
         self.clear_screen()
         GenerateApp(self.root, self)
+
+    def show_url_shortener(self):
+        self.clear_screen()
+        UtilityScreen(self.root, self, "URL Shortener")
+
+    def show_messaging(self):
+        self.clear_screen()
+        UtilityScreen(self.root, self, "SMS / Email")
 
 
 if __name__ == "__main__":
