@@ -19,4 +19,5 @@ python utilities_app.py
 - Never commit passwords or API keys. The database file is git-ignored.
 
 ## Team
-- (add member names here)
+- Rayah Jenine Paje
+- Raven Rillera
